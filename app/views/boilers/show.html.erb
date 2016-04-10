@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Make:</strong>
+  <%= @boiler.make %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @boiler.type %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @boiler.year %>
+</p>
+
+<p>
+  <strong>Facility:</strong>
+  <%= @boiler.facility %>
+</p>
+
+<%= link_to 'Edit', edit_boiler_path(@boiler) %> |
+<%= link_to 'Back', boilers_path %>

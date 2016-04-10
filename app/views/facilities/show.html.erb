@@ -10,5 +10,30 @@
   <%= @facility.date %>
 </p>
 
+<p> Facility's Boilers</p>
+
+<%= @facility.boilers.each do |boiler| %>
+<p>
+  <strong>Make:</strong>
+  <%= boiler.make %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= boiler.type %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= boiler.year %>
+</p>
+
+<p>
+  <strong>Facility:</strong>
+  <%= boiler.facility.name %>
+</p>
+<% end %>
+<h2>Add a Boiler</h2>
+<%= render 'boilers/form' %></br>
 <%= link_to 'Edit', edit_facility_path(@facility) %> |
 <%= link_to 'Back', facilities_path %>

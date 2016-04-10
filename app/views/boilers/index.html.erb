@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Boilers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Make</th>
+      <th>Type</th>
+      <th>Year</th>
+      <th>Facility</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @boilers.each do |boiler| %>
+      <tr>
+        <td><%= boiler.make %></td>
+        <td><%= boiler.type %></td>
+        <td><%= boiler.year %></td>
+        <td><%= boiler.facility %></td>
+        <td><%= link_to 'Show', boiler %></td>
+        <td><%= link_to 'Edit', edit_boiler_path(boiler) %></td>
+        <td><%= link_to 'Destroy', boiler, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Boiler', new_boiler_path %>
