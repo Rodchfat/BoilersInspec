@@ -20,5 +20,5 @@
   <%= @boiler.facility %>
 </p>
 
-<%= link_to 'Edit', edit_boiler_path(@boiler) %> |
-<%= link_to 'Back', boilers_path %>
+<%= link_to 'Edit', [@boiler.facility, @boiler] %> |
+<%= link_to 'Back', facility_boilers_path(@facility) %>

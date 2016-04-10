@@ -1,31 +1,36 @@
 <%= form_for([@facility, @facility.boilers.build]) do |f| %>
   
-
+<table>
+  <tr>
+    <td>
   <div class="field">
     <%= f.label :make %><br>
     <%= f.text_field :make %>
   </div>
+  </td>
+    <td>
   <div class="field">
     <%= f.label :type %><br>
     <%= f.text_field :type %>
   </div>
+  </td>
+  <td>
   <div class="field">
     <%= f.label :year %><br>
     <%= f.datetime_select :year %>
   </div>
-  <div class="field">
-    <%= f.label :facility_id %><br>
-    <%= f.text_field :facility_id %>
-  </div>
+  </td>
+  
+  </br>
+  <tr>
+    <td>
   <div class="actions">
     <%= f.submit %>
   </div>
+  </td>
+  </tr>
+  </tr>
   
 <% end %>
-<div>
-    <%#= link_to 'Destroy', boiler.facility(@boiler), method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
+</table>
   
-  <%#= link_to 'Delete', [@facility.boilers, @boiler],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>

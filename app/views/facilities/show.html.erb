@@ -1,38 +1,65 @@
 <p id="notice"><%= notice %></p>
+<table>
+  <th>
+  <tr>
+    <td>
+    <strong>Name:</strong>
+    </td>
+  </tr>
+  </th>
+  <tr>
+    <td>
+    <%= @facility.name %>
+    </td>
+  </tr>
+  <th>
+  <tr>
+    <td>
+    <strong>Date:</strong>
+    </td>
+  </tr>
+  </th>
+  <tr>
+    <td>
+    <%= @facility.date %>
+    </td>
+  </tr>
+  </tr>
+</table>
+<%= link_to 'Facility Boilers', facility_boilers_path(@facility) %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @facility.name %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @facility.date %>
-</p>
-
-<p> Facility's Boilers</p>
-
+<p><strong> Facility's Boilers</strong></p>
+<table>
+  <tr>
+    <td>
 <%= @facility.boilers.each do |boiler| %>
 <p>
   <strong>Make:</strong>
   <%= boiler.make %>
 </p>
-
+</td>
+<td>
 <p>
   <strong>Type:</strong>
   <%= boiler.type %>
 </p>
-
+</td>
+<td>
 <p>
   <strong>Year:</strong>
   <%= boiler.year %>
 </p>
-
+</td>
+<td>
 <p>
   <strong>Facility:</strong>
   <%= boiler.facility.name %>
 </p>
+</td>
 <% end %>
+</tr>
+</table>
+
 <h2>Add a Boiler</h2>
 <%= render 'boilers/form' %></br>
 <%= link_to 'Edit', edit_facility_path(@facility) %> |

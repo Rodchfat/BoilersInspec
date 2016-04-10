@@ -4,7 +4,9 @@ class BoilersController < ApplicationController
   # GET /boilers
   # GET /boilers.json
   def index
-    @boilers = Boiler.all
+    @facility = Facility.find(params[:facility_id])
+    @boilers = @facility.boilers.all
+    #@boilers = Boiler.all
   end
 
   # GET /boilers/1
@@ -14,7 +16,8 @@ class BoilersController < ApplicationController
 
   # GET /boilers/new
   def new
-    @boiler = Boiler.new
+    @boilers = @facility.boilers.new
+    #@boiler = Boiler.new
   end
 
   # GET /boilers/1/edit
@@ -55,16 +58,15 @@ class BoilersController < ApplicationController
   # DELETE /boilers/1
   # DELETE /boilers/1.json
   def destroy
-    @facility = facility.find(params[:facility_id])
-    @boiler = @facility.boilers.find(params[:id])
-    @boiler.destroy
+        @boiler.destroy
     redirect_to facility_path(@facility)
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_boiler
-      @boiler = Boiler.find(params[:id])
+      @facility = Facility.find(params[:facility_id])
+      @boiler = @facility.boilers.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
