@@ -1,3 +1,3 @@
 class Facility < ActiveRecord::Base
-    has_many :boilers
+    has_many :boilers, dependent: :destroy
 end

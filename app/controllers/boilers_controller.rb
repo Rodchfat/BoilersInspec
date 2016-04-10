@@ -55,11 +55,10 @@ class BoilersController < ApplicationController
   # DELETE /boilers/1
   # DELETE /boilers/1.json
   def destroy
+    @facility = facility.find(params[:facility_id])
+    @boiler = @facility.boilers.find(params[:id])
     @boiler.destroy
-    respond_to do |format|
-      format.html { redirect_to boilers_url, notice: 'Boiler was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to facility_path(@facility)
   end
 
   private
