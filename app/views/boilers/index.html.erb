@@ -19,10 +19,10 @@
         <td><%= boiler.make %></td>
         <td><%= boiler.type %></td>
         <td><%= boiler.year %></td>
-        <td><%= boiler.facility %></td>
-        <td><%= link_to 'Show', facility_boiler_path %></td>
-        <td><%= link_to 'Edit', edit_boiler_path(boiler) %></td>
-        <td><%= link_to 'Delete', [facility.boiler, boiler],
+        <td><%= boiler.facility.name %></td>
+        <td><%= link_to 'Show', [boiler.facility, boiler] %></td>
+        <td><%= link_to 'Edit', [boiler.facility, boiler] %></td>
+        <td><%= link_to 'Delete', [boiler.facility, boiler],
                method: :delete,
                data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Boiler', new_boiler_path %>
+<%= link_to 'New Boiler', new_facility_boiler_path(@facility) %>
