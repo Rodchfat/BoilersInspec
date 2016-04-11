@@ -1,24 +1,39 @@
 <p id="notice"><%= notice %></p>
-
+<table>
+  <thead>
+    <tr>
+      <th>Make</th>
+      <th>Type</th>
+      <th>Year</th>
+      <th>Facility</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
 <p>
-  <strong>Make:</strong>
   <%= @boiler.make %>
 </p>
-
+</td>
+<td>
 <p>
-  <strong>Type:</strong>
   <%= @boiler.type %>
 </p>
-
+</td>
+<td>
 <p>
-  <strong>Year:</strong>
   <%= @boiler.year %>
 </p>
-
+</td>
+<td>
 <p>
-  <strong>Facility:</strong>
-  <%= @boiler.facility %>
+  <%= @boiler.facility.name %>
 </p>
+</td>
+</tr>
+</tbody>
+</table>
 
 <%= link_to 'Edit', [@boiler.facility, @boiler] %> |
 <%= link_to 'Back', facility_boilers_path(@facility) %>
