@@ -44,7 +44,7 @@
     <% @facility.boilers.each do |boiler| %>
       <tr>
         <td><%= boiler.make %></td>
-        <td><%= boiler.type %></td>
+        <td><%= boiler.manfacture %></td>
         <td><%= boiler.year %></td>
         <td><%= boiler.facility.name %></td>
         <td><%= link_to 'Show', [boiler.facility, boiler], class: "btn btn-primary" %></td>

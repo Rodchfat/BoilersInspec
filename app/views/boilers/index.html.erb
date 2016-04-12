@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Make</th>
-      <th>Type</th>
+      <th>manfacture</th>
       <th>Year</th>
       <th>Facility</th>
       <th colspan="3"></th>
@@ -17,11 +17,11 @@
     <% @boilers.each do |boiler| %>
       <tr>
         <td><%= boiler.make %></td>
-        <td><%= boiler.type %></td>
+        <td><%= boiler.manfacture %></td>
         <td><%= boiler.year %></td>
         <td><%= boiler.facility.name %></td>
-        <td><%= link_to 'Show', [boiler.facility, boiler], class: "btn btn-primary btn-sm" %></td>
-        <td><%= link_to 'Edit', [boiler.facility, boiler], class: "btn btn-success btn-sm" %></td>
+        <td><%= link_to 'Show', facility_boiler_path(@facility, boiler), class: "btn btn-primary btn-sm" %></td>
+        <td><%= link_to 'Edit', edit_facility_boiler_path(@facility, boiler), class: "btn btn-success btn-sm" %></td>
         <td><%= link_to 'Delete', [boiler.facility, boiler],
                method: :delete,
                data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm" %></td>

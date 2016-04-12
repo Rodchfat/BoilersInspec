@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160411022925) do
+ActiveRecord::Schema.define(version: 20160412003725) do
 
   create_table "boilers", force: :cascade do |t|
     t.string   "make"
-    t.string   "type"
     t.datetime "year"
     t.integer  "facility_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "manfacture"
   end
 
   add_index "boilers", ["facility_id"], name: "index_boilers_on_facility_id"

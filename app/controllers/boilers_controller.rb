@@ -16,6 +16,7 @@ class BoilersController < ApplicationController
 
   # GET /boilers/new
   def new
+    @facility = Facility.find(params[:facility_id])
     @boilers = @facility.boilers.new
     #@boiler = Boiler.new
   end
@@ -33,10 +34,10 @@ class BoilersController < ApplicationController
     respond_to do |format|
       if @boiler.save
         format.html { redirect_to facility_path(@facility), notice: 'Boiler was successfully created.' }
-        format.json { render :show, status: :created, location: @boiler }
+        #format.json { render :show, status: :created, location: @boiler }
       else
         format.html { render :new }
-        format.json { render json: @boiler.errors, status: :unprocessable_entity }
+        #format.json { render json: @boiler.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -45,12 +46,12 @@ class BoilersController < ApplicationController
   # PATCH/PUT /boilers/1.json
   def update
     respond_to do |format|
-      if @boiler.update(boiler_params)
-        format.html { redirect_to @boiler, notice: 'Boiler was successfully updated.' }
-        format.json { render :show, status: :ok, location: @boiler }
+      if @facility.boilers.update(boiler_params)
+        format.html { redirect_to facility_path(@facility), notice: 'Boiler was successfully updated.' }
+        format.json { render :show, status: :ok, location: @facility.boiler }
       else
         format.html { render :edit }
-        format.json { render json: @boiler.errors, status: :unprocessable_entity }
+        format.json { render json: @facility.boiler.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -71,6 +72,6 @@ class BoilersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def boiler_params
-      params.require(:boiler).permit(:make, :type, :year, :facility_id)
+      params.require(:boiler).permit(:make, :manfacture, :year, :facility_id)
     end
 end

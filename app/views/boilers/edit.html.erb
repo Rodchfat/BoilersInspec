@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @boiler %> |
-<%= link_to 'Back', boilers_path %>
+<%= link_to 'Show', facility_boiler_path(@facility, @boiler) %> |
+<%= link_to 'Back', facility_boilers_path(@facility) %>
