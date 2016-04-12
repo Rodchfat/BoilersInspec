@@ -16,9 +16,9 @@
       <tr>
         <td><%= facility.name %></td>
         <td><%= facility.date %></td>
-        <td><%= link_to 'Show', facility %></td>
-        <td><%= link_to 'Edit', edit_facility_path(facility) %></td>
-        <td><%= link_to 'Destroy', facility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', facility, class: "btn btn-primary btn-sm" %></td>
+        <td><%= link_to 'Edit', edit_facility_path(facility), class: "btn btn-success btn-sm" %></td>
+        <td><%= link_to 'Destroy', facility, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Facility', new_facility_path %>
+<%= link_to 'New Facility', new_facility_path, class: "btn btn-primary btn-sm" %>

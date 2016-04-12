@@ -2,7 +2,7 @@
 
 <h1>Listing Boilers</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Make</th>
@@ -20,11 +20,11 @@
         <td><%= boiler.type %></td>
         <td><%= boiler.year %></td>
         <td><%= boiler.facility.name %></td>
-        <td><%= link_to 'Show', [boiler.facility, boiler] %></td>
-        <td><%= link_to 'Edit', [boiler.facility, boiler] %></td>
+        <td><%= link_to 'Show', [boiler.facility, boiler], class: "btn btn-primary btn-sm" %></td>
+        <td><%= link_to 'Edit', [boiler.facility, boiler], class: "btn btn-success btn-sm" %></td>
         <td><%= link_to 'Delete', [boiler.facility, boiler],
                method: :delete,
-               data: { confirm: 'Are you sure?' } %></td>
+               data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Boiler', new_facility_boiler_path(@facility) %>
+<%= link_to 'New Boiler', new_facility_boiler_path(@facility), class: "btn btn-primary btn-sm" %> </br>

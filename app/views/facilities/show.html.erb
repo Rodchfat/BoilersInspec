@@ -26,7 +26,7 @@
   </tr>
   </tr>
 </table>
-<%= link_to 'Facility Boilers', facility_boilers_path(@facility) %>
+<%= link_to 'Facility Boilers', facility_boilers_path(@facility), class: "btn btn-primary" %>
 
 <p><strong> Facility's Boilers</strong></p>
 <table class="table">
@@ -47,11 +47,11 @@
         <td><%= boiler.type %></td>
         <td><%= boiler.year %></td>
         <td><%= boiler.facility.name %></td>
-        <td><%= link_to 'Show', [boiler.facility, boiler] %></td>
-        <td><%= link_to 'Edit', [boiler.facility, boiler] %></td>
+        <td><%= link_to 'Show', [boiler.facility, boiler], class: "btn btn-primary" %></td>
+        <td><%= link_to 'Edit', [boiler.facility, boiler], class: "btn btn-success" %></td>
         <td><%= link_to 'Delete', [boiler.facility, boiler],
                method: :delete,
-               data: { confirm: 'Are you sure?' } %></td>
+               data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
