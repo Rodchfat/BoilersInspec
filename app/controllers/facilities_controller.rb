@@ -4,7 +4,12 @@ class FacilitiesController < ApplicationController
   # GET /facilities
   # GET /facilities.json
   def index
-    @facilities = Facility.all
+     @facilities = Facility.all
+    unless 
+      @search = FacilitySearch.new(params[:search])
+      @facilities = @search.scope
+    end
+    
   end
 
   # GET /facilities/1

@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Boilers</h1>
-
-<table class="table">
+<div class="media">
+  <div class="media-body">
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Make</th>
@@ -18,7 +19,7 @@
       <tr>
         <td><%= boiler.make %></td>
         <td><%= boiler.manfacture %></td>
-        <td><%= boiler.year %></td>
+        <td><%= boiler.year.strftime("%m/%d/%Y") %></td>
         <td><%= boiler.facility.name %></td>
         <td><%= link_to 'Show', facility_boiler_path(@facility, boiler), class: "btn btn-primary btn-sm" %></td>
         <td><%= link_to 'Edit', edit_facility_boiler_path(@facility, boiler), class: "btn btn-success btn-sm" %></td>
@@ -29,6 +30,8 @@
     <% end %>
   </tbody>
 </table>
+</div>
+</div>
 
 <br>
 
